@@ -8,12 +8,7 @@
 
         TypeOfBankAccount _typeAccount = TypeOfBankAccount.DEBIT;
 
-
-
-        public Account()
-        {
-
-        }
+        public Account() {}
 
         public override string ToString()
         {
@@ -29,6 +24,31 @@
             {
                 _balance = _balance + result;
                 balans = true;
+            }
+            else
+            {
+                Console.WriteLine("Ошибка. Не корректный ввод данных.");
+            }
+
+            return balans;
+        }
+
+        public bool WithdrawBalans()
+        {
+            bool balans = false;
+
+            Console.Write($"Введите сумму для снятия с Вашего счета {_number}: ");
+            if (Decimal.TryParse(Console.ReadLine(), out decimal result))
+            {
+                if(result <= _balance)
+                {
+                    _balance = _balance - result;
+                    balans = true;
+                }
+                else
+                {
+                    Console.WriteLine("На вашем счету не достаточно средств.");
+                }
             }
             else
             {

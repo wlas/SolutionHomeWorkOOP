@@ -68,5 +68,8 @@ void AddBalans()
 
 void WithdrawBalans()
 {
-
+    if (account.WithdrawBalans())
+    {
+        Console.WriteLine(account);
+    }
 }
