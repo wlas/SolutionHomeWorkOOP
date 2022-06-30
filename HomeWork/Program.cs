@@ -1,2 +1,65 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿StartMenu();
+
+
+/// <summary>
+/// Вывод меню в консоль.
+/// </summary>
+void IntroMenu()
+{
+    Console.WriteLine("\nВЫБЕРЕТЕ НУЖНЫЙ ПУНКТ ИЗ МЕНЮ НИЖЕ:");
+    Console.WriteLine("++++++++++++++++++++++++++++++++++");
+    Console.WriteLine("1 - Вывести информацию о счете на экран.");
+    Console.WriteLine("2 - Положить на счет.");
+    Console.WriteLine("3 - Снять со счета.");
+    Console.WriteLine("0 - Для заверешение.");
+    Console.WriteLine("+++++++++++++++++++++++++++++++++++");
+    Console.Write("Укажите номер: ");
+}
+
+/// <summary>
+/// Вывод меню в консоль.
+/// </summary>
+void StartMenu()
+{
+    while (true)
+    {
+        IntroMenu();
+
+        string rezult = Console.ReadLine();
+
+        switch (rezult)
+        {
+            case "1":
+                PrintInfo();
+                break;
+            case "2":
+                AddBalans();
+                break;
+            case "3":
+                WithdrawBalans();
+                break;
+            case "0":
+                Console.WriteLine("Завершение программы.");
+                Console.ReadKey(true);
+                return;
+            default:
+                Console.WriteLine("Не определено. Пожалуйста, укажите цифру повторно.");
+                break;
+        }
+    }
+}
+
+void PrintInfo()
+{
+    
+}
+
+void AddBalans()
+{
+
+}
+
+void WithdrawBalans()
+{
+
+}
