@@ -1,4 +1,8 @@
-﻿StartMenu();
+﻿using HomeWork;
+
+Account account = new();
+
+StartMenu();
 
 
 /// <summary>
@@ -51,12 +55,15 @@ void StartMenu()
 
 void PrintInfo()
 {
-    
+    Console.WriteLine(account);
 }
 
 void AddBalans()
 {
-
+    if (account.AddBalans())
+    {
+        Console.WriteLine(account);
+    }
 }
 
 void WithdrawBalans()
