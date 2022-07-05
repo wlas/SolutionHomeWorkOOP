@@ -60,16 +60,34 @@ void PrintInfo()
 
 void AddBalans()
 {
-    if (account.AddBalans())
+    Console.Write($"Введите сумму для зачислеения на Ваш счет: ");
+    if (Decimal.TryParse(Console.ReadLine(), out decimal result))
     {
+        account.AddBalans(result);
         Console.WriteLine(account);
+    }
+    else
+    {
+        Console.WriteLine("Ошибка. Не корректный ввод данных.");
     }
 }
 
 void WithdrawBalans()
 {
-    if (account.WithdrawBalans())
+    Console.Write($"Введите сумму для снятия с Вашего счета: ");
+    if (Decimal.TryParse(Console.ReadLine(), out decimal result))
     {
-        Console.WriteLine(account);
+        if (account.WithdrawBalans(result))
+        {
+            Console.WriteLine(account);
+        }
+        else
+        {
+            Console.WriteLine("На вашем счету не достаточно средств.");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Ошибка. Не корректный ввод данных.");
     }
 }
