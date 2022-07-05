@@ -17,6 +17,7 @@ void IntroMenu()
     Console.WriteLine("2 - Положить на счет.");
     Console.WriteLine("3 - Снять со счета.");
     Console.WriteLine("4 - Перевод строки на оборот.");
+    Console.WriteLine("5 - Чтение файла.");
     Console.WriteLine("0 - Для заверешение.");
     Console.WriteLine("+++++++++++++++++++++++++++++++++++");
     Console.Write("Укажите номер: ");
@@ -46,6 +47,9 @@ void StartMenu()
                 break;
             case "4":
                 StringRevers();
+                break;
+            case "5":
+                ReadFile();
                 break;
             case "0":
                 Console.WriteLine("Завершение программы.");
@@ -100,10 +104,20 @@ void StringRevers()
 {
     Console.Write($"Введите строку для перевода букв в обратном порядке: ");
     string str = Console.ReadLine();
+
     if (str != String.Empty)
     {
         Console.WriteLine(WorkFiles.StringRevers(str));
-
     }
+}
 
+void ReadFile()
+{    
+    WorkFiles workFiles = new("File.txt");
+
+    Console.WriteLine("Вывод файла на экран консоли: ");
+    Console.WriteLine(workFiles.GetFIOList());
+
+    Console.WriteLine("Вывод найденных email адресов: ");
+    Console.WriteLine(workFiles.GetEmailList());
 }
