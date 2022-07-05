@@ -1,4 +1,5 @@
 ﻿using HomeWork;
+using HomeWork.HomeWork3;
 
 Account account = new();
 
@@ -15,6 +16,7 @@ void IntroMenu()
     Console.WriteLine("1 - Вывести информацию о счете на экран.");
     Console.WriteLine("2 - Положить на счет.");
     Console.WriteLine("3 - Снять со счета.");
+    Console.WriteLine("4 - Перевод строки на оборот.");
     Console.WriteLine("0 - Для заверешение.");
     Console.WriteLine("+++++++++++++++++++++++++++++++++++");
     Console.Write("Укажите номер: ");
@@ -41,6 +43,9 @@ void StartMenu()
                 break;
             case "3":
                 WithdrawBalans();
+                break;
+            case "4":
+                StringRevers();
                 break;
             case "0":
                 Console.WriteLine("Завершение программы.");
@@ -90,4 +95,15 @@ void WithdrawBalans()
     {
         Console.WriteLine("Ошибка. Не корректный ввод данных.");
     }
+}
+void StringRevers()
+{
+    Console.Write($"Введите строку для перевода букв в обратном порядке: ");
+    string str = Console.ReadLine();
+    if (str != String.Empty)
+    {
+        Console.WriteLine(WorkFiles.StringRevers(str));
+
+    }
+
 }
