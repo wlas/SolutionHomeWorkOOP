@@ -1,6 +1,6 @@
 ﻿using HomeWork;
 
-Building building;
+Build build;
 
 StartMenu();
 
@@ -46,30 +46,31 @@ void StartMenu()
 
 void CreateBuilding()
 {
-    building = new ();
+    build = new ();
     Console.WriteLine("Для создания здания введите следующие данные:");
 
     Console.Write("Укажите количество этажей: ");
     if(int.TryParse(Console.ReadLine(), out int floor))
     {
-        building.Floor(floor);
+        build.SetFloor(floor);
     }
 
     Console.Write("Укажите количество квартир на этаже: ");
     if (int.TryParse(Console.ReadLine(), out int apartments))
     {
-        building.Apartments(apartments);
+        build.SetApartments(apartments);
     }
 
     Console.Write("Укажите высоту потолка квартиры: ");
     if (float.TryParse(Console.ReadLine(), out float height))
     {
-        building.Height(height);
+        build.SetHeight(height);
     }
 
     Console.Write("Укажите количество подъездов: ");
     if (int.TryParse(Console.ReadLine(), out int entrances))
     {
-        building.Entrances(entrances);
+        build.SetEntrances(entrances);
     }
+
 }

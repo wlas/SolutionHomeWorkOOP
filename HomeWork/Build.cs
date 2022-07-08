@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork
 {
-    public class Building
+    public class Build
     {
         /// <summary>
         /// Счетчик уникальных номеров зданий
@@ -43,24 +43,48 @@ namespace HomeWork
             return _counter++;
         }
 
-        public void Floor(int floor)
+        /// <summary>
+        /// Задаем количество этажей
+        /// </summary>
+        /// <param name="floor">Этажность</param>
+        public void SetFloor(int floor)
         {
             _FloorCount = floor;
         }
 
-        public void Apartments(int apartments)
+        /// <summary>
+        /// Указываем количество квартир на этаже
+        /// </summary>
+        /// <param name="apartments">Количество квартир</param>
+        public void SetApartments(int apartments)
         {
             _ApartmentsCount = apartments;
         }
 
-        public void Height(float height)
+        /// <summary>
+        /// Задаем высоту 1 этажа
+        /// </summary>
+        /// <param name="height">Высота этажа</param>
+        public void SetHeight(float height)
         {
             _Height = height;
         }
 
-        public void Entrances(int entrances)
+        /// <summary>
+        /// Узнаем колличество подъездов
+        /// </summary>
+        /// <param name="entrances">Количество подъездов</param>
+        public void SetEntrances(int entrances)
         {
             _EntrancesCount = entrances;
+        }
+
+        public void CreateBuilding()
+        {
+            if(_FloorCount > 0 && _ApartmentsCount > 0 && _Height > 0 && _EntrancesCount > 0)
+            {
+
+            }
         }
     }
 }
