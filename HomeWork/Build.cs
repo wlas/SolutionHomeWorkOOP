@@ -8,6 +8,8 @@ namespace HomeWork
 {
     public class Build
     {
+        public static List<Building> buildings = new();
+
         /// <summary>
         /// Счетчик уникальных номеров зданий
         /// </summary>
