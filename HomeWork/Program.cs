@@ -46,31 +46,51 @@ void StartMenu()
 
 void CreateBuilding()
 {
-    build = new ();
-    Console.WriteLine("Для создания здания введите следующие данные:");
-
-    Console.Write("Укажите количество этажей: ");
-    if(int.TryParse(Console.ReadLine(), out int floor))
+    try
     {
-        build.SetFloor(floor);
+        build = new();
+        Console.WriteLine("Для создания здания введите следующие данные:");
+
+        Console.Write("Укажите количество этажей: ");
+        if (int.TryParse(Console.ReadLine(), out int floor))
+        {
+            build.SetFloor(floor);
+        }
+
+        Console.Write("Укажите количество квартир на этаже: ");
+        if (int.TryParse(Console.ReadLine(), out int apartments))
+        {
+            build.SetApartments(apartments);
+        }
+
+        Console.Write("Укажите высоту потолка квартиры: ");
+        if (float.TryParse(Console.ReadLine(), out float height))
+        {
+            build.SetHeight(height);
+        }
+
+        Console.Write("Укажите количество подъездов: ");
+        if (int.TryParse(Console.ReadLine(), out int entrances))
+        {
+            build.SetEntrances(entrances);
+        }
+
+        build.CreateBuilding();
+        Print(build.GetIDBuilding());
+
+    }
+    catch (Exception ex)
+    {
+       Console.WriteLine(ex.ToString());
+    }    
+}
+
+void Print(int idBuilding)
+{
+    if(idBuilding == 0)
+    {
+
     }
 
-    Console.Write("Укажите количество квартир на этаже: ");
-    if (int.TryParse(Console.ReadLine(), out int apartments))
-    {
-        build.SetApartments(apartments);
-    }
-
-    Console.Write("Укажите высоту потолка квартиры: ");
-    if (float.TryParse(Console.ReadLine(), out float height))
-    {
-        build.SetHeight(height);
-    }
-
-    Console.Write("Укажите количество подъездов: ");
-    if (int.TryParse(Console.ReadLine(), out int entrances))
-    {
-        build.SetEntrances(entrances);
-    }
-
+    Console.WriteLine();
 }

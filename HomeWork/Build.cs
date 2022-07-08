@@ -80,13 +80,45 @@ namespace HomeWork
         {
             _EntrancesCount = entrances;
         }
-
+        /// <summary>
+        /// Создание строения и добавления его в список.
+        /// </summary>
         public void CreateBuilding()
         {
             if(_FloorCount > 0 && _ApartmentsCount > 0 && _Height > 0 && _EntrancesCount > 0)
             {
+                _IDBuilding = GetGenerateID();
+
+                var building = new Building()
+                {
+                    ID = _IDBuilding,
+                    Floor = _FloorCount,
+                    Apartments = _ApartmentsCount,
+                    Height = _Height,
+                    Entrances = _EntrancesCount,
+                    AllApartments = AllApartmentsCount(ref _FloorCount, ref _ApartmentsCount),
+                    AllHeight = AllHeight(ref _FloorCount, ref _Height)
+                };
+
+                buildings.Add(building);
 
             }
         }
+        private int AllApartmentsCount(ref int floor, ref int apartments)
+        {
+            return floor * apartments;
+        }
+
+        private float AllHeight(ref int floor, ref float height)
+        {
+            float basement = 2.1F;
+
+            float attic = 4.2F;
+
+            return floor * height + basement + attic;
+        }
+
+        public int GetIDBuilding() => _IDBuilding;        
+
     }
 }
