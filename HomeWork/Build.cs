@@ -77,8 +77,10 @@
         /// <summary>
         /// Создание строения и добавления его в список.
         /// </summary>
-        public void CreateBuilding()
+        public bool CreateBuilding()
         {
+            bool result = false;
+
             if(_FloorCount > 0 && _ApartmentsCount > 0 && _Height > 0 && _EntrancesCount > 0)
             {
                 _IDBuilding = GetGenerateID();
@@ -95,7 +97,9 @@
                 };
 
                 buildings.Add(building);
+                result = true;
             }
+            return result;
         }
 
         /// <summary>

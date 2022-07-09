@@ -1,4 +1,5 @@
 ﻿using HomeWork;
+using System.Globalization;
 
 Build build;
 
@@ -56,8 +57,14 @@ void CreateBuilding()
         Height();
         Entrances();
 
-        build.CreateBuilding();
-        PrintListBuilding(build.GetIDBuilding());
+        if (build.CreateBuilding()) 
+        {
+            PrintListBuilding(build.GetIDBuilding());
+        }
+        else
+        {
+            Console.WriteLine("Ошибка создания.");
+        }
 
     }
     catch (Exception ex)
@@ -78,7 +85,6 @@ void PrintListBuilding(int idBuilding)
             {
                 foreach (var item in building)
                 {
-                    Console.WriteLine("==========================");
                     PrintItem(item);
                 }
             }
@@ -96,15 +102,17 @@ void PrintListBuilding(int idBuilding)
 
 void PrintItem(Building item)
 {
-
-    Console.WriteLine($"Номер здания: {item.ID};\n" +
+    if(item is not null)
+    {
+        Console.WriteLine("===================================");
+        Console.Write($"Номер здания: {item.ID};\n" +
            $"Количество подъездов: {item.Entrances};\n" +
            $"Этажность: {item.Floor};\n" +
            $"Количество квартир на этаже: {item.Apartments};\n" +
-           $"Высота потолков: {item.Height};\n" +
+           $"Высота потолков: {item.Height} м;\n" +
            $"Общее количество квартир в здании: {item.AllApartments};\n" +
-           $"Общая высота здания: {item.AllHeight}.\n");
-
+           $"Общая высота здания: {item.AllHeight} м.\n");
+    }
 }
 
 void Floor()
@@ -113,6 +121,10 @@ void Floor()
     if (int.TryParse(Console.ReadLine(), out int floor))
     {
         build.SetFloor(floor);
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода данных;");        
     }
 }
 
@@ -123,14 +135,23 @@ void Apartments()
     {
         build.SetApartments(apartments);
     }
+    else
+    {
+        Console.WriteLine("Ошибка ввода данных;");
+    }
 }
 
 void Height()
 {
     Console.Write("Укажите высоту потолка квартиры: ");
-    if (float.TryParse(Console.ReadLine(), out float height))
+    if (float.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture,  out float height))
     {
         build.SetHeight(height);
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода данных;");
+        Height();
     }
 }
 
@@ -140,5 +161,9 @@ void Entrances()
     if (int.TryParse(Console.ReadLine(), out int entrances))
     {
         build.SetEntrances(entrances);
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода данных;");
     }
 }
