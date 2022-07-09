@@ -17,17 +17,17 @@
         /// <summary>
         /// Высота здания
         /// </summary>
-        private float _Height;
+        private static float _Height;
 
         /// <summary>
         /// Этажность
         /// </summary>
-        private int _FloorCount;
+        private static int _FloorCount;
 
         /// <summary>
         /// Количество квартир
         /// </summary>
-        private int _ApartmentsCount;
+        private static int _ApartmentsCount;
 
         /// <summary>
         /// Количество подъездов
@@ -43,7 +43,7 @@
         /// Задаем количество этажей
         /// </summary>
         /// <param name="floor">Этажность</param>
-        public void SetFloor(int floor)
+        public static void SetFloor(int floor)
         {
             _FloorCount = floor;
         }
@@ -52,7 +52,7 @@
         /// Указываем количество квартир на этаже
         /// </summary>
         /// <param name="apartments">Количество квартир</param>
-        public void SetApartments(int apartments)
+        public static void SetApartments(int apartments)
         {
             _ApartmentsCount = apartments;
         }
@@ -92,8 +92,8 @@
                     Apartments = _ApartmentsCount,
                     Height = _Height,
                     Entrances = _EntrancesCount,
-                    AllApartments = AllApartmentsCount(ref _FloorCount, ref _ApartmentsCount),
-                    AllHeight = AllHeight(ref _FloorCount, ref _Height)
+                    AllApartments = AllApartmentsCount(),
+                    AllHeight = AllHeight()
                 };
 
                 buildings.Add(building);
@@ -108,9 +108,9 @@
         /// <param name="floor">Этажность</param>
         /// <param name="apartments">Количество квартир на этаже</param>
         /// <returns></returns>
-        public static int AllApartmentsCount(ref int floor, ref int apartments)
+        public static int AllApartmentsCount()
         {
-            return floor * apartments;
+            return _FloorCount * _ApartmentsCount;
         }
 
         /// <summary>
@@ -119,13 +119,13 @@
         /// <param name="floor">Этажность</param>
         /// <param name="height">Высота этажа</param>
         /// <returns></returns>
-        public static float AllHeight(ref int floor, ref float height)
+        public static float AllHeight()
         {
             float basement = 2.1F;
 
             float attic = 4.2F;
 
-            return floor * height + basement + attic;
+            return _FloorCount * _Height + basement + attic;
         }
 
         /// <summary>

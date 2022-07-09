@@ -34,6 +34,9 @@ void StartMenu()
             case "2":
                 PrintListBuilding(0);
                 break;
+            case "3":
+                CalculationApartments();
+                break;
             case "0":
                 Console.WriteLine("Завершение программы.");
                 Console.ReadKey(true);
@@ -109,9 +112,9 @@ void PrintItem(Building item)
            $"Количество подъездов: {item.Entrances};\n" +
            $"Этажность: {item.Floor};\n" +
            $"Количество квартир на этаже: {item.Apartments};\n" +
-           $"Высота потолков: {item.Height} м;\n" +
+           $"Высота потолков: {item.Height.ToString("0.00")} м;\n" +
            $"Общее количество квартир в здании: {item.AllApartments};\n" +
-           $"Общая высота здания: {item.AllHeight} м.\n");
+           $"Общая высота здания: {item.AllHeight.ToString("0.00")} м.\n");
     }
 }
 
@@ -120,11 +123,12 @@ void Floor()
     Console.Write("Укажите количество этажей: ");
     if (int.TryParse(Console.ReadLine(), out int floor))
     {
-        build.SetFloor(floor);
+        Build.SetFloor(floor);
     }
     else
     {
-        Console.WriteLine("Ошибка ввода данных;");        
+        Console.WriteLine("Ошибка ввода данных;");
+        Floor();
     }
 }
 
@@ -133,11 +137,12 @@ void Apartments()
     Console.Write("Укажите количество квартир на этаже: ");
     if (int.TryParse(Console.ReadLine(), out int apartments))
     {
-        build.SetApartments(apartments);
+        Build.SetApartments(apartments);
     }
     else
     {
         Console.WriteLine("Ошибка ввода данных;");
+        Apartments();
     }
 }
 
@@ -165,5 +170,14 @@ void Entrances()
     else
     {
         Console.WriteLine("Ошибка ввода данных;");
+        Entrances();
     }
+}
+
+void CalculationApartments()
+{
+    Console.WriteLine("Для расчета квартир в здании введите следующие данные: ");
+    Floor();
+    Apartments();
+    Console.WriteLine($"Общее количестов квартир: {Build.AllApartmentsCount()}");
 }
