@@ -114,16 +114,16 @@
         }
 
         /// <summary>
-        /// Метод считает высоту здания
+        /// Метод считает высоту здания. В метод включена высота подвала и чердака.
         /// </summary>
         /// <param name="floor">Этажность</param>
         /// <param name="height">Высота этажа</param>
         /// <returns></returns>
         public static float AllHeight()
         {
-            float basement = 2.1F;
+            float basement = 2.1F; //подвал
 
-            float attic = 4.2F;
+            float attic = 4.2F; //чердак
 
             return _FloorCount * _Height + basement + attic;
         }
