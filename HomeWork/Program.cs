@@ -37,6 +37,9 @@ void StartMenu()
             case "3":
                 CalculationApartments();
                 break;
+            case "4":
+                CalculationAllHeight();
+                break;
             case "0":
                 Console.WriteLine("Завершение программы.");
                 Console.ReadKey(true);
@@ -151,7 +154,7 @@ void Height()
     Console.Write("Укажите высоту потолка квартиры: ");
     if (float.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture,  out float height))
     {
-        build.SetHeight(height);
+        Build.SetHeight(height);
     }
     else
     {
@@ -180,4 +183,12 @@ void CalculationApartments()
     Floor();
     Apartments();
     Console.WriteLine($"Общее количестов квартир: {Build.AllApartmentsCount()}");
+}
+
+void CalculationAllHeight()
+{
+    Console.WriteLine("Для расчета высоты здания введите следующие данные: ");
+    Floor();
+    Height();
+    Console.WriteLine($"Общяя высота здания: {Build.AllHeight()}");
 }

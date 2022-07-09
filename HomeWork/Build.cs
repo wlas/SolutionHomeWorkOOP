@@ -61,7 +61,7 @@
         /// Задаем высоту 1 этажа
         /// </summary>
         /// <param name="height">Высота этажа</param>
-        public void SetHeight(float height)
+        public static void SetHeight(float height)
         {
             _Height = height;
         }
