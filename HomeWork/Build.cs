@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HomeWork
+﻿namespace HomeWork
 {
     public class Build
     {
-        public static List<Building> buildings = new();
+        private static List<Building> buildings = new();
 
         /// <summary>
         /// Счетчик уникальных номеров зданий
@@ -101,15 +95,27 @@ namespace HomeWork
                 };
 
                 buildings.Add(building);
-
             }
         }
-        private int AllApartmentsCount(ref int floor, ref int apartments)
+
+        /// <summary>
+        /// Метод считает общее количество квартир в здании
+        /// </summary>
+        /// <param name="floor">Этажность</param>
+        /// <param name="apartments">Количество квартир на этаже</param>
+        /// <returns></returns>
+        public static int AllApartmentsCount(ref int floor, ref int apartments)
         {
             return floor * apartments;
         }
 
-        private float AllHeight(ref int floor, ref float height)
+        /// <summary>
+        /// Метод считает высоту здания
+        /// </summary>
+        /// <param name="floor">Этажность</param>
+        /// <param name="height">Высота этажа</param>
+        /// <returns></returns>
+        public static float AllHeight(ref int floor, ref float height)
         {
             float basement = 2.1F;
 
@@ -118,7 +124,17 @@ namespace HomeWork
             return floor * height + basement + attic;
         }
 
-        public int GetIDBuilding() => _IDBuilding;        
+        /// <summary>
+        /// Метод возврыщает текущее ID здания
+        /// </summary>
+        /// <returns></returns>
+        public int GetIDBuilding() => _IDBuilding;
 
+        /// <summary>
+        /// Метод возвращает список зданий.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Building> GetBuildingsList() => buildings;
+        
     }
 }
