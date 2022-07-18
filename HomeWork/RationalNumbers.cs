@@ -2,7 +2,7 @@
 
 namespace HomeWork
 {
-    internal class RationalNumbers
+    internal struct RationalNumbers
     {
         /// <summary>
         /// Значение числителя
@@ -17,45 +17,20 @@ namespace HomeWork
         /// <summary>
         /// Числитель рационального числа
         /// </summary>
-        public int Numerator { 
-            get 
-            { 
-                return _numerator;
-            } 
-            set 
-            { 
-                _numerator = value; 
-            } 
-        }
+        public int Numerator => _numerator;
 
         /// <summary>
         /// Знаменатель рационального числа
         /// </summary>
-        public int Denumerator
-        {
-            get 
-            { 
-                return _denumerator; 
-            }
-            set
-            {
-                if (value != 0)
-                {
-                    _denumerator = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException("Знаменатель равен нулю.");
-                }
-            }
-        }
+        public int Denumerator => _denumerator;
+
         /// <summary>
         /// Переопределение стандартного констрктора. (0/1)
         /// </summary>
         public RationalNumbers() 
         { 
-            Numerator = 0; 
-            Denumerator = 1; 
+            _numerator = 0; 
+            _denumerator = 1; 
         }
 
         /// <summary>
@@ -65,8 +40,8 @@ namespace HomeWork
         /// <param name="denumerator">Знаменатель</param>
         public RationalNumbers(int numerator, int denumerator)
         {
-            Numerator = numerator;
-            Denumerator = denumerator;
+            _numerator = numerator;
+            _denumerator = denumerator;
         }
         /// <summary>
         /// Конструктор целых чисел (Числитель/1)
@@ -79,11 +54,7 @@ namespace HomeWork
         /// <returns>[Числитель]/[Знаменатель]</returns>
         public override string ToString()
         {
-            StringBuilder sb = new();
-            sb.Append(Numerator);
-            sb.Append('/');
-            sb.Append(Denumerator);
-            return sb.ToString();
+            return $"{Numerator}/{Denumerator}";
         }
 
         public static bool operator ==(RationalNumbers numb1, RationalNumbers numb2)
@@ -113,49 +84,21 @@ namespace HomeWork
         }
         public static bool operator <(RationalNumbers numb1, RationalNumbers numb2)
         {
-            if ((numb1.Numerator * numb2.Denumerator - numb2.Numerator * numb1.Denumerator) < 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (numb1.Numerator * numb2.Denumerator - numb2.Numerator * numb1.Denumerator) < 0;
         }
 
         public static bool operator >(RationalNumbers numb1, RationalNumbers numb2)
         {
-            if ((numb1.Numerator * numb2.Denumerator - numb2.Numerator * numb1.Denumerator) > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (numb1.Numerator * numb2.Denumerator - numb2.Numerator * numb1.Denumerator) > 0;            
         }
 
         public static bool operator <=(RationalNumbers numb1, RationalNumbers numb2)
         {
-            if ((numb1.Numerator * numb2.Denumerator - numb2.Numerator * numb1.Denumerator) <= 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (numb1.Numerator * numb2.Denumerator - numb2.Numerator * numb1.Denumerator) <= 0;
         }
         public static bool operator >=(RationalNumbers numb1, RationalNumbers numb2)
         {
-            if ((numb1.Numerator * numb2.Denumerator - numb2.Numerator * numb1.Denumerator) >= 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (numb1.Numerator * numb2.Denumerator - numb2.Numerator * numb1.Denumerator) >= 0;
         }
         public static RationalNumbers operator +(RationalNumbers numb1, RationalNumbers numb2)
         {
@@ -172,14 +115,14 @@ namespace HomeWork
 
         public static RationalNumbers operator ++(RationalNumbers numb)
         {
-            var numbNew = numb.Numerator + numb.Denumerator;
-            numb.Numerator = numbNew;
+            var numbNew = numb._numerator + numb._denumerator;
+            numb._numerator = numbNew;
             return numb;
         }
         public static RationalNumbers operator --(RationalNumbers numb)
         {
             var numNew = numb.Numerator - numb.Denumerator;
-            numb.Numerator = numNew;
+            numb._numerator = numNew;
             return numb;
         }
         public static RationalNumbers operator *(RationalNumbers numb1, RationalNumbers numb2)
