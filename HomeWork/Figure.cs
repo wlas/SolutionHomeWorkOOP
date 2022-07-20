@@ -22,7 +22,7 @@
         /// </summary>
         private int _y;
 
-        public Color Color =>;
+        public Color Color => _Color;
 
         public Condition Condition => _Condition;
 
