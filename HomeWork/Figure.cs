@@ -1,24 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HomeWork
+﻿namespace HomeWork
 {
-    public enum Color
-    {
-        Green,
-        White,
-        Blue,
-        Red,
-        Yellow
-    }
-    public enum Condition
-    {
-        Visible,
-        Invisible
-    }
     public class Figure
     {
         /// <summary>
@@ -65,9 +46,9 @@ namespace HomeWork
             return this;
         }
         
-        public Figure MoveY()
+        public Figure MoveY(int point)
         {
-            _y = _y + 1;
+            _y = _y + point;
             return this;
         }
 
