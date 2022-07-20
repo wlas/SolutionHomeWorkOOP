@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using HomeWork;
+
+Figure figure = new(Color.Red, Condition.Visible, 25, 5);
+Console.WriteLine(figure);
+
+Console.ReadLine();
