@@ -1,25 +1,13 @@
 ﻿namespace HomeWork
 {
-    public abstract class Figure
-    {
-        /// <summary>
-        /// Цвет фигуры
-        /// </summary>
+    public abstract class Figure : IFigure
+    {        
         private Color _Color;
-
-        /// <summary>
-        /// Состояние фигуры
-        /// </summary>
+        
         private Condition _Condition;
-
-        /// <summary>
-        /// Передвижение фигуры по оси X
-        /// </summary>
+        
         private int _x;
-
-        /// <summary>
-        /// Передвижение фигуры по оси Y
-        /// </summary>
+        
         private int _y;
 
         public Color Color => _Color;
@@ -57,12 +45,7 @@
             _Color = color;
             return this;
         }
-
-        /// <summary>
-        ///  Метод возвращает состояние фигуры (видимое/невидимое)
-        /// </summary>
-        /// <param name="f">Экземпляр фигуры</param>
-        /// <returns>Состояние фигуры</returns>
+        
         public Condition GetCondition(Figure f) => f._Condition;
 
         public abstract double Area();
