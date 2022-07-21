@@ -12,7 +12,7 @@
             _height = height;
         }
 
-        public double Area()
+        public override double Area()
         {
             return _width * _height;
         }

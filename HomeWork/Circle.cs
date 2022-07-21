@@ -9,7 +9,7 @@
             _Radius = radius;
         }
 
-        public double Area()
+        public override double Area()
         {
             return Math.PI * Math.Pow(_Radius, 2);
         }

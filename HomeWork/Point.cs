@@ -6,5 +6,9 @@
         {
             
         }
+        public override double Area()
+        {
+            return 0;
+        }
     }
 }

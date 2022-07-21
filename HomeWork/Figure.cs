@@ -1,6 +1,6 @@
 ﻿namespace HomeWork
 {
-    public class Figure
+    public abstract class Figure
     {
         /// <summary>
         /// Цвет фигуры
@@ -64,5 +64,8 @@
         /// <param name="f">Экземпляр фигуры</param>
         /// <returns>Состояние фигуры</returns>
         public Condition GetCondition(Figure f) => f._Condition;
+
+        public abstract double Area();
+
     }
 }
