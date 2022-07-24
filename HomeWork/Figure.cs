@@ -42,13 +42,13 @@
 
         public Figure MoveX(int point)
         {
-            _x = _x + point;
+            _x += point;
             return this;
         }
         
         public Figure MoveY(int point)
         {
-            _y = _y + point;
+            _y += point;
             return this;
         }
 
@@ -57,12 +57,5 @@
             _Color = color;
             return this;
         }
-
-        /// <summary>
-        ///  Метод возвращает состояние фигуры (видимое/невидимое)
-        /// </summary>
-        /// <param name="f">Экземпляр фигуры</param>
-        /// <returns>Состояние фигуры</returns>
-        public Condition GetCondition(Figure f) => f._Condition;
     }
 }
