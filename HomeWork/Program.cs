@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using HomeWork;
+
+var manager = new FileManagerLogic();
+
+manager.Start();
+
+Console.WriteLine("Завершение.");
+Console.ReadLine();
