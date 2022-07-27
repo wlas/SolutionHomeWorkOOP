@@ -14,10 +14,10 @@ public class FileManagerLogic
         _userInterface.WriteLine("Файловый менаджер v2.0");
 
         var can_work = true;
-
         do 
         {
-            var input = _userInterface.ReadLine("Введите команду:");
+            var input = _userInterface.ReadLine("> ", false);
+
             if (input == "quit")
                 can_work = false;
             else

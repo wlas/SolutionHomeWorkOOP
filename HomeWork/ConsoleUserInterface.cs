@@ -1,16 +1,26 @@
 ﻿namespace HomeWork;
 public class ConsoleUserInterface : IUserInterface
 {
-    public string ReadLine(string? Prompt)
+    public void Write(string str)
     {
-        if(Prompt is { Length: 0 })        
-            WriteLine(Prompt);
-
-        return Console.ReadLine()!;        
+        Console.Write(str);
     }
-
     public void WriteLine(string str)
     {
         Console.WriteLine(str);
     }
+    public string ReadLine(string? Prompt, bool PromptNewLine = true)
+    {
+        if (Prompt is { Length: > 0 })
+            if (PromptNewLine)            
+                WriteLine(Prompt);            
+            else            
+                Write(Prompt);
+            
+                
+
+        return Console.ReadLine()!;
+    }
+
+
 }
