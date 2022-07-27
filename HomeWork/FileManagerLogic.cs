@@ -2,26 +2,38 @@
 
 public class FileManagerLogic
 {
-    private readonly IUserInterface _userInterface;
+    private readonly IUserInterface _UserInterface;
 
     public FileManagerLogic(IUserInterface UserInterface)
     {
-        _userInterface = UserInterface;
+        _UserInterface = UserInterface;
     }
 
     public void Start()
     {
-        _userInterface.WriteLine("Файловый менаджер v2.0");
+        _UserInterface.WriteLine("Файловый менаджер v2.0");
 
         var can_work = true;
         do 
         {
-            var input = _userInterface.ReadLine("> ", false);
+            var input = _UserInterface.ReadLine("> ", false);
 
-            if (input == "quit")
-                can_work = false;
-            else
-                _userInterface.WriteLine($"Введена команда: {input}");
+            switch (input)
+            {
+                case "quit":
+                    can_work = false;
+                    break;
+                case "int":
+                    var int_value = _UserInterface.ReadInt("Введите целое число > ", false);
+                    _UserInterface.WriteLine($"Введено: {int_value}");
+                    break;
+                case "double":
+                    var double_value = _UserInterface.ReadDouble("Введите вещественное число > ", false);
+                    _UserInterface.WriteLine($"Введено: {double_value}");
+                    break;
+                //default:
+                //    break;
+            }
         } 
         while (can_work);
     }
