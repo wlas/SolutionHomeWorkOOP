@@ -18,7 +18,7 @@ public class CreateFileComand : FileManagerCommand
     {
         if (args.Length != 2 || string.IsNullOrWhiteSpace(args[1]))
         {
-            _UserInterface.WriteLine("Для команды создания файла необходимо указать один параметр - название файла с его разрешением.");
+            _UserInterface.WriteLine("Для команды создания файла необходимо указать один параметр - название файла с его разрешением. Пример: NameFile.txt");
             return;
         }
 
@@ -33,10 +33,12 @@ public class CreateFileComand : FileManagerCommand
         if (!file.Exists)
         {
             File.Create(file_path).Dispose();
-            if (file.Exists)
-            {
-                _UserInterface.WriteLine($"Файл {file.Name} успешно создан.");
-            }
+            _UserInterface.WriteLine($"Файл {file.Name} успешно создан.");
         }
+        else
+        {
+            _UserInterface.WriteLine($"Ошибка. Файл с таким же именем {file.Name}, уже существует в данной директории.");
+        }
+
     }
 }

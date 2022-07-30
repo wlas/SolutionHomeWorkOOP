@@ -33,11 +33,12 @@ public class CreateDirectoryComand : FileManagerCommand
         {
             Directory.CreateDirectory(dir_path);
 
-            if (directory.Exists)
-            {
-                _UserInterface.WriteLine($"Директория {directory.Name} успешно создана.");
-            }
-        }       
+           _UserInterface.WriteLine($"Директория {directory.Name} успешно создана.");            
+        }
+        else
+        {
+            _UserInterface.WriteLine($"Ошибка. Директория с таким именем{directory.Name}, уже имеется в данном расположении.");
+        }
 
     }
 }
