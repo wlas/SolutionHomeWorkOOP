@@ -33,6 +33,8 @@ public class FileManagerLogic
             { "mkdir", new CreateDirectoryComand(UserInterface, this) },
             { "cr", new CreateFileComand(UserInterface, this) },
             { "rm", new DeleteDirectoryAndFileComand(UserInterface, this) },
+            { "readfile", new ReadFileTxtComand(UserInterface, this) },
+
         };
     }
 
