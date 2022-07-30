@@ -40,7 +40,6 @@ public class ReadFileTxtComand : FileManagerCommand
                 int count_words = 0;
                 int count_line = 0;
                 int count_tab = 0;
-                int count_char_spaces = 0;
 
                 foreach (var line in FileInfoEx.EnumLines(file))
                 {
