@@ -64,4 +64,36 @@ public class ConsoleUserInterface : IUserInterface
 
         return value;
     }
+
+    public bool ReadYesNo(string? Prompt, bool PromntNewLine = true)
+    {
+        bool success;
+        bool value = false;
+        do
+        {
+            WritePrompt(Prompt, PromntNewLine);
+
+            var input = Console.ReadLine();
+
+            success = char.TryParse(input, out char ch);
+            
+            if (ch == 'y')
+            {
+                success = true;
+                value = true;
+            }
+            else if(ch == 'n')
+            {
+                success = true;
+                value = false;
+            }
+            
+            if (!success)
+                WriteLine("Строка имела неверный формат");
+
+        }
+        while (!success);
+
+        return value;
+    }
 }

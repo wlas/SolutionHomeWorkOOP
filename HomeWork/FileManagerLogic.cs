@@ -27,23 +27,19 @@ public class FileManagerLogic
             { "ListDir", list_dir_command },
             { "help", help_command },
             { "?", help_command },
-            { "quit", quit_command },
+            { "q", quit_command },
             { "exit", quit_command },
             { "cd", new ChangeDirectoryCommand(UserInterface, this) },
             { "mkdir", new CreateDirectoryComand(UserInterface, this) },
-            { "cat", new CreateDirectoryComand(UserInterface, this) },
-
+            { "cr", new CreateFileComand(UserInterface, this) },
+            { "rm", new DeleteDirectoryAndFileComand(UserInterface, this) },
         };
-
-        // рефлексия - для автоматизации добавления команд в словарь
     }
-
 
     public void Start()
     {
         _UserInterface.WriteLine("Файловый менеджер v2.0");
 
-        //var can_work = true;
         do
         {
             var input = _UserInterface.ReadLine("> ", false);

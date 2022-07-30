@@ -10,5 +10,8 @@ public interface IUserInterface
     int ReadInt(string? Prompt, bool PromntNewLine = true);
 
     double ReadDouble(string? Prompt, bool PromntNewLine = true);
+
+    bool ReadYesNo(string? Prompt, bool PromntNewLine = true);
+
 }
 
