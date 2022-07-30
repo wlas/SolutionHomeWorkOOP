@@ -30,6 +30,8 @@ public class FileManagerLogic
             { "quit", quit_command },
             { "exit", quit_command },
             { "cd", new ChangeDirectoryCommand(UserInterface, this) },
+            { "mkdir", new CreateDirectoryComand(UserInterface, this) },
+
         };
 
         // рефлексия - для автоматизации добавления команд в словарь
