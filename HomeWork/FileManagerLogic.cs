@@ -31,6 +31,7 @@ public class FileManagerLogic
             { "exit", quit_command },
             { "cd", new ChangeDirectoryCommand(UserInterface, this) },
             { "mkdir", new CreateDirectoryComand(UserInterface, this) },
+            { "cat", new CreateDirectoryComand(UserInterface, this) },
 
         };
 

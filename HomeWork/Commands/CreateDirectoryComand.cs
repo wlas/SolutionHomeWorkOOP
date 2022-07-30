@@ -32,10 +32,12 @@ public class CreateDirectoryComand : FileManagerCommand
         if (!directory.Exists)
         {
             Directory.CreateDirectory(dir_path);
+
+            if (directory.Exists)
+            {
+                _UserInterface.WriteLine($"Директория {directory.Name} успешно создана.");
+            }
         }       
 
-        _UserInterface.WriteLine($"Директория {directory.Name} успешно создана.");
-
-        Directory.SetCurrentDirectory(directory.FullName);
     }
 }
