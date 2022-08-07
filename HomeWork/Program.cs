@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using HomeWork;
+
+var console_ui = new ConsoleUserInterface();
+
+var manager = new FileManagerLogic(console_ui);
+
+manager.Start();
+
+Console.WriteLine("Завершение.");
+Console.ReadLine();
