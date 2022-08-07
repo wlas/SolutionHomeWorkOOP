@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HomeWork.Commands.Base.FileManagerCommand" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\FileManagerCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Commands.ChangeDirectoryCommand" Collapsed="true">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAIAAACAAAAAAAA=</HashCode>
+      <FileName>Commands\ChangeDirectoryCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Commands.CreateDirectoryComand" Collapsed="true">
+    <Position X="15.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAIAAACAAAAAAAA=</HashCode>
+      <FileName>Commands\CreateDirectoryComand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Commands.CreateFileComand" Collapsed="true">
+    <Position X="20" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAIAAACAAAAAAAA=</HashCode>
+      <FileName>Commands\CreateFileComand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Commands.DeleteDirectoryAndFileComand" Collapsed="true">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAgAAQAAAAAAAAAAAAAAAIAAACAAAAAAAA=</HashCode>
+      <FileName>Commands\DeleteDirectoryAndFileComand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Commands.HelpCommand" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAIAAACAAAAAAAA=</HashCode>
+      <FileName>Commands\HelpCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Commands.ListDrivesCommand" Collapsed="true">
+    <Position X="17.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Commands\ListDrivesCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Commands.PrintDirectoryFilesCommand" Collapsed="true">
+    <Position X="22.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAIAAACAAAAAAAA=</HashCode>
+      <FileName>Commands\PrintDirectoryFilesCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Commands.QuitCommand" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\QuitCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Commands.ReadFileTxtComand" Collapsed="true">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAIAAACAAAAAAAA=</HashCode>
+      <FileName>Commands\ReadFileTxtComand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.Infrastructure.FileInfoEx" Collapsed="true">
+    <Position X="10.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\FileInfoEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork.ConsoleUserInterface" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAAAAAAAAAAAAIAAAQgAAAAAAAAAAAAAAIAAEAAAA=</HashCode>
+      <FileName>ConsoleUserInterface.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HomeWork.FileManagerLogic" Collapsed="true">
+    <Position X="8.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACEAAAAEAAAAAAAAAAAAAAAAIACAAAAAAAA=</HashCode>
+      <FileName>FileManagerLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="HomeWork.IUserInterface" Collapsed="true">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAIAAAQgAAAAAAAAAAAAAAIAAEAAAA=</HashCode>
+      <FileName>IUserInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
